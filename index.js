@@ -8,8 +8,12 @@ let obj = {
   name: 'seu nome vai aqui'
 };
 
+console.log('randomstring__: ', key);
+
 let txt_c = encrypt(key,JSON.stringify(obj));
 let txt_p = decrypt(key, txt_c);
 console.log(txt_c);
 console.log('\n');
-console.log(JSON.parse(txt_p));
+!!txt_p
+  && console.log(JSON.parse(txt_p))
+  || console.log('decrypt is invalid');
